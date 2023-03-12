@@ -1,0 +1,49 @@
+﻿<Window x:Class="Password_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password_Generator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Aqua">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" 
+               Content="Label 1"
+               Name="passwordLabel"
+               HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center"
+               FontSize="50"
+               FontWeight="Bold"/>
+
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+            <Label Content="Password Length: 5"
+                   Name="PasswordLengthLabel"
+                   FontSize="30"/>
+            <Slider Name="passwordLengthSlider" Margin="0,20,0,0" ValueChanged="passwordLengthSlider_ValueChanged" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    Grid.Row="2">
+            <Button Name="copyPasswordButton" 
+                    Content="Copy Password"
+                    Height="50"
+                    Width="120"
+                    Margin="0,0,10,0"
+                    Click="copyPasswordButton_Click"/>
+            <Button Name="generateRandomPasswordButton"
+                    Content="Random Password"
+                    Height="50"
+                    Width="120"
+                    Margin="10,0,0,0"
+                    Click="generateRandomPasswordButton_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
